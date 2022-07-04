@@ -253,7 +253,8 @@ building_alicemod_paluush_homes = {
 	base_buildtime = 2800
 	can_demolish = no
 	can_be_ruined = no
-	icon = building_residence
+	icon = building_alicemod_archaic
+	position_priority = 100
 
 	ai_weight = { weight = 0 }
 	
@@ -291,6 +292,7 @@ building_alicemod_paluush_homes = {
 building_alicemod_slave = {
 	base_cap_amount = 4
 	base_buildtime = 800
+	position_priority = 2
 
 	category = resource
 	
@@ -303,7 +305,6 @@ building_alicemod_slave = {
 		planet_housing_add = 3
 		job_farmer_add = 5
 		job_miner_add = 5
-		job_slave_overseer_add = 1
 		planet_amenities_add = -5
 		planet_max_buildings_add = 1
 	}
@@ -326,6 +327,12 @@ building_alicemod_slave = {
 			job_maintenance_drone_add = 5
 		}
 	}
+    triggered_planet_modifier = {
+        potential = {
+            planet = { has_modifier = slave_colony }
+        }
+        job_slave_overseer_add = 2
+    }
 
 	resources = {
 		category = planet_buildings
@@ -365,6 +372,7 @@ building_alicemod_slave_2 = {
 	base_cap_amount = 8
 	base_buildtime = 3600
 	icon = "building_alicemod_slave"
+	position_priority = 2
 
 	category = resource
 	
@@ -378,10 +386,16 @@ building_alicemod_slave_2 = {
 		planet_housing_add = 15
 		job_farmer_add = 15
 		job_miner_add = 15
-		job_slave_overseer_add = 2
 		planet_amenities_add = -15
 		planet_max_buildings_add = 2
 	}
+
+	triggered_planet_modifier = {
+        potential = {
+            planet = { has_modifier = slave_colony }
+        }
+		job_slave_overseer_add = 2
+    }
 	
 	triggered_planet_modifier = {
 		potential = {
