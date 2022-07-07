@@ -56,9 +56,12 @@ alicemod_building_illegal_posthumous_employment_center = {
 		category = planet_buildings
 		cost = {
 			minerals = @b1_minerals
+            influence = 250
 		}
 		upkeep = {
 			energy = @b1_upkeep
+			food = @b1_upkeep
+			minerals = @b1_upkeep
 		}
 	}
 
@@ -82,7 +85,6 @@ alicemod_building_illegal_posthumous_employment_center = {
 
 alicemod_building_illegal_clone_vats = {
 	base_buildtime = @b1_time
-	icon = "building_clone_vats"
 
 	category = pop_assembly
 
@@ -131,6 +133,7 @@ alicemod_building_illegal_clone_vats = {
 		# Base cost
 		cost = {
 			minerals = 500
+            influence = 250
 		}
 		# Org/Lith cost
 		cost = {
@@ -150,7 +153,9 @@ alicemod_building_illegal_clone_vats = {
 
 		# Base upkeep
 		upkeep = {
-			energy = 2
+			energy = @b1_upkeep
+			food = @b1_upkeep
+			minerals = @b1_upkeep
 		}
 		# Org/Lith upkeep
 		upkeep = {
@@ -185,7 +190,7 @@ alicemod_building_illegal_clone_vats = {
 
 building_alicemod_urban_shell = {
 	base_cap_amount = 4
-	base_buildtime = 400
+	base_buildtime = 800
 	can_demolish = no
 	can_be_ruined = no
 	icon = building_residence
@@ -231,6 +236,8 @@ building_alicemod_urban_shell = {
 		}
 		upkeep = {
 			energy = 2
+			food = 2
+			minerals = 2
 		}
 	}
 	
@@ -251,7 +258,7 @@ building_alicemod_urban_shell = {
 }
 
 building_alicemod_utopian_homes = {
-	base_cap_amount = 4
+	base_cap_amount = 6
 	base_buildtime = 2800
 	can_demolish = no
 	can_be_ruined = no
@@ -266,35 +273,33 @@ building_alicemod_utopian_homes = {
 	
 	planet_modifier = {
 		planet_amenities_add = 10
-		planet_housing_add = 5
-		planet_crime_add = -5
-		job_researcher_add = 2
+		planet_housing_add = 15
+		planet_crime_add = -10
+		job_researcher_add = 4
 		job_farmer_add = 2
-		job_technician_add = 1
-		job_miner_add = 1
+		job_technician_add = 2
+		job_miner_add = 3
 		job_telepath_add = 1
-		job_artisan_add = 1
+		job_artisan_add = 3
 	}
 	
 	resources = {
 		category = planet_buildings
 		cost = {
 			minerals = 3000
-			influence = 25
+			influence = 50
 		}
 		upkeep = {
-			energy = 2
+			energy = 4
+			food = 4
+			minerals = 4
 		}
-	}
-	
-	on_built = {
-	 	change_planet_size = 2
 	}
 }
 
 building_alicemod_slave = {
 	base_cap_amount = 4
-	base_buildtime = 800
+	base_buildtime = 400
 	position_priority = 2
 
 	category = resource
@@ -309,6 +314,7 @@ building_alicemod_slave = {
 		job_farmer_add = 5
 		job_miner_add = 5
 		planet_amenities_add = -5
+		planet_crime_add = 5
 		planet_max_buildings_add = 1
 	}
 	
@@ -343,9 +349,9 @@ building_alicemod_slave = {
 			influence = 25
 		}
 		upkeep = {
-			energy = 2
-			food = 2
-			minerals = 2
+			energy = @b1_upkeep
+			food = @b1_upkeep
+			minerals = @b1_upkeep
 		}
 	}
 	
@@ -375,7 +381,7 @@ building_alicemod_slave = {
 
 building_alicemod_slave_2 = {
 	base_cap_amount = 8
-	base_buildtime = 3600
+	base_buildtime = 900
 	position_priority = 2
 
 	category = resource
@@ -392,13 +398,8 @@ building_alicemod_slave_2 = {
 		job_miner_add = 15
 		planet_amenities_add = 15
 		planet_max_buildings_add = 2
-	}
-
-	triggered_planet_modifier = {
-        potential = {
-            planet = { has_modifier = slave_colony }
-        }
 		job_slave_overseer_add = 2
+		planet_crime_add = 15
     }
 	
 	triggered_planet_modifier = {
@@ -426,10 +427,12 @@ building_alicemod_slave_2 = {
 			influence = 250
 		}
 		upkeep = {
-			energy = 4
+			energy = 3
+			food = 3
+			minerals = 3
 		}
 	}
-	
+
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -452,12 +455,16 @@ building_alicemod_slave_2 = {
 	triggered_desc = {
 		text = job_miner_effect_desc
 	}
+
+	destroy_trigger = {
+        exists = owner
+		NOT = { has_modifier = slave_colony }
+    }
 }
 
 building_alicemod_clinic = {
 	base_buildtime = @b2_time
 	base_cap_amount = 1
-	icon = building_clinic
 
 	category = amenity
 
@@ -485,14 +492,16 @@ building_alicemod_clinic = {
 		category = planet_buildings
 		cost = {
 			minerals = @b1_minerals
+            influence = 250
 		}
 		upkeep = {
 			energy = @b1_upkeep
+			food = @b1_upkeep
+			minerals = @b1_upkeep
 		}
 	}
 
 	triggered_desc = {
 		text = job_healthcare_effect_desc
-        influence = 250
 	}
 }
