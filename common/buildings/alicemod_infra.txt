@@ -49,7 +49,7 @@ alicemod_building_illegal_posthumous_employment_center = {
 
 	planet_modifier = {
 		job_reassigner_add = 3
-		planet_crime_add = 3
+		planet_crime_add = 30
 	}
 
 	resources = {

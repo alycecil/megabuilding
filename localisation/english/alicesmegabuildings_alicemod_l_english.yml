@@ -3,8 +3,8 @@
  # ###################################
  # buildings
  # ###################################
- alicemod_building_illegal_posthumous_employment_center:0 "Ancient Living Crude Huts"
- alicemod_building_illegal_posthumous_employment_center_desc:0 "An old form of living taken up when in need."
+ alicemod_building_illegal_posthumous_employment_center:0 "Illicit Revitalization Center"
+ alicemod_building_illegal_posthumous_employment_center_desc:0 "By looking the other way to a minor megacorps sins, we gain the benefits of having all these extra vats allocated in part to us."
  alicemod_building_illegal_clone_vats:0 "Illicit Organ Farm"
  alicemod_building_illegal_clone_vats_desc:0 "By looking the other way to a minor megacorps sins, we gain the benefits of having all these extra clone vats allocated in part to us."
  building_alicemod_urban_shell:0 "Urbanized Infrastructure"
