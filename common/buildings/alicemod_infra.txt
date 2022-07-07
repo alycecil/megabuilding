@@ -1,12 +1,12 @@
 alicemod_building_illegal_posthumous_employment_center = {
 	base_buildtime = @b1_time
 	base_cap_amount = 1
-	icon = "building_clone_vats"
 
 	category = pop_assembly
 
 	potential = {
 		exists = owner
+        has_building = building_posthumous_employment_center
 		OR = {
 			owner = { is_ai = no }
 			NOT = { exists = assembling_species }
@@ -92,6 +92,7 @@ alicemod_building_illegal_clone_vats = {
 
 	potential = {
 		exists = owner
+        has_building = building_clone_vats
 		NOT = { has_modifier = resort_colony }
 		OR = {
 			owner = { is_ai = no }
@@ -206,6 +207,10 @@ building_alicemod_urban_shell = {
 
 	upgrades = {
 	}
+
+	prerequisites = {
+        "tech_starbase_4"
+    }
 	
 	triggered_planet_modifier = {
 		potential = {
@@ -424,7 +429,7 @@ building_alicemod_slave_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			influence = 250
+			influence = 100
 		}
 		upkeep = {
 			energy = 3
@@ -469,8 +474,8 @@ building_alicemod_clinic = {
 	category = amenity
 
 	potential = {
-		owner = { is_regular_empire = yes }
-	}
+        has_building = building_clinic
+    }
 
 	destroy_trigger = {
 		exists = owner
@@ -492,7 +497,7 @@ building_alicemod_clinic = {
 		category = planet_buildings
 		cost = {
 			minerals = @b1_minerals
-            influence = 250
+            influence = 150
 		}
 		upkeep = {
 			energy = @b1_upkeep
@@ -504,4 +509,54 @@ building_alicemod_clinic = {
 	triggered_desc = {
 		text = job_healthcare_effect_desc
 	}
+}
+
+building_alicemod_expand_low_orbit_shell = {
+    base_buildtime = 500
+	base_cap_amount = 3
+	icon = holding_orbital_assembly_complex
+	can_demolish = no
+	can_be_ruined = no
+	position_priority = 10
+
+	planet_module = {
+		planet_max_buildings_add = 2
+		planet_non_artificial_max_districts_add = 2
+	}
+
+	prerequisites = {
+        "tech_starbase_3"
+    }
+
+	potential = {
+        exists = owner
+        is_artificial = no
+        NOR = {
+            has_planet_flag = ruined_orbital_ring_planet
+            is_planet_class = pc_ringworld_habitable
+            is_planet_class = pc_ringworld_habitable_damaged
+            is_planet_class = pc_ringworld_tech
+            is_planet_class = pc_ringworld_tech_damaged
+            is_planet_class = pc_ringworld_seam
+            is_planet_class = pc_ringworld_seam_damaged
+            is_planet_class = pc_habitat
+        }
+    }
+
+	#on_built = {
+	# 	change_planet_size = 2
+	#}
+
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1200
+            alloys = 500
+            energy = 1000
+            influence = 50
+        }
+        upkeep = {
+            energy = 2
+        }
+    }
 }

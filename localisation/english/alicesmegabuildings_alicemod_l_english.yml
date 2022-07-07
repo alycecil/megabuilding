@@ -17,3 +17,5 @@
  building_alicemod_slave_2_desc:0 "Establish a massive slave colony work site."
  building_alicemod_clinic:0 "Healthcare MegaCorp Planetary HQ"
  building_alicemod_clinic_desc:0 "By looking the other way to a minor megacorps sins, we gain the benefits of having cutting edge healthcare jobs available to our citizenry."
+ building_alicemod_expand_low_orbit_shell:0 "Planetary Shell Expansion"
+ building_alicemod_expand_low_orbit_shell_desc:0 "Establish massive infrastructure that allows us to get the most out of our existing planets."
