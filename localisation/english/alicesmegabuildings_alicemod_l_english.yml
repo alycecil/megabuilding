@@ -1,0 +1,19 @@
+﻿l_english:
+
+ # ###################################
+ # buildings
+ # ###################################
+ alicemod_building_illegal_posthumous_employment_center:0 "Ancient Living Crude Huts"
+ alicemod_building_illegal_posthumous_employment_center_desc:0 "An old form of living taken up when in need."
+ alicemod_building_illegal_clone_vats:0 "Illicit Organ Farm"
+ alicemod_building_illegal_clone_vats_desc:0 "By looking the other way to a minor megacorps sins, we gain the benefits of having all these extra clone vats allocated in part to us."
+ building_alicemod_urban_shell:0 "Urbanized Infrastructure"
+ building_alicemod_urban_shell_desc:0 "Establishes the required planetary intrastructure to expand our grasp of the world."
+ building_alicemod_utopian_homes:0 "Colony Infrastructure"
+ building_alicemod_utopian_homes_desc:0 "A balanced colonial worksite and supporting infrastructure."
+ building_alicemod_slave:0 "Slave Worksite"
+ building_alicemod_slave_desc:0 "Establish slave minor work site."
+ building_alicemod_slave_2:0 "Slave Infrastructure"
+ building_alicemod_slave_2_desc:0 "Establish a massive slave colony work site."
+ building_alicemod_clinic:0 "Healthcare MegaCorp Planetary HQ"
+ building_alicemod_clinic_desc:0 "By looking the other way to a minor megacorps sins, we gain the benefits of having cutting edge healthcare jobs available to our citizenry."
