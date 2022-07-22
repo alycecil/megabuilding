@@ -244,6 +244,9 @@ building_alicemod_urban_shell = {
 			food = 2
 			minerals = 2
 		}
+        produces = {
+            influence = 0.05
+        }
 	}
 	
 	triggered_desc = {
@@ -281,6 +284,7 @@ building_alicemod_utopian_homes = {
 		planet_housing_add = 15
 		planet_crime_add = -10
 		job_researcher_add = 4
+		job_healthcare_add = 1
 		job_farmer_add = 2
 		job_technician_add = 2
 		job_miner_add = 3
@@ -299,6 +303,9 @@ building_alicemod_utopian_homes = {
 			food = 4
 			minerals = 4
 		}
+        produces = {
+            influence = 0.05
+        }
 	}
 }
 
@@ -525,7 +532,7 @@ building_alicemod_expand_low_orbit_shell = {
 	}
 
 	ai_weight = {
-        factor = 3
+        factor = 10
 
         modifier = {
             factor = 2
@@ -578,12 +585,15 @@ building_alicemod_expand_low_orbit_shell = {
         category = planet_buildings
         cost = {
             minerals = 2800
-            alloys = 500
+            alloys = 4000
             energy = 2000
-            influence = 50
+            influence = 150
         }
         upkeep = {
             energy = 2
+        }
+        produces = {
+            influence = 0.15
         }
     }
 }
