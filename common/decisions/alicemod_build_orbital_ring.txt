@@ -1,0 +1,99 @@
+alicemod_decision_build_orbital_ring = {
+	owned_planets_only = yes
+	icon = decision_prospect
+
+	enactment_time = 0
+	resources = {
+		category = decisions
+		cost = {
+			unity = 1000
+			energy = 1000
+			minerals = 1000
+			influence = 50
+			alloys = 1000
+		}
+	}
+
+	potential = {
+		NOR = {
+			is_planet_class = pc_ringworld_habitable
+			is_planet_class = pc_ringworld_habitable_damaged
+			is_planet_class = pc_ringworld_tech
+			is_planet_class = pc_ringworld_tech_damaged
+			is_planet_class = pc_ringworld_seam
+			is_planet_class = pc_ringworld_seam_damage
+		}
+	}
+
+	allow = {
+		if = {
+			limit = {
+				is_variable_set = alicemod_var_build_orbital_ring
+			}
+			custom_tooltip = {
+				fail_text = requires_max_3_times_fail_simple
+				success_text = requires_max_3_times_ice_dumping
+				check_variable = {
+					which = alicemod_var_build_orbital_ring
+					value < 1
+				}
+			}
+		}
+		else = {
+			custom_tooltip = {
+				text = requires_max_3_times_pass_simple
+				always = yes
+			}
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+            change_variable = {
+                which = alicemod_var_build_orbital_ring
+                value = 1
+            }
+        }
+
+		save_event_target_as = orbital_ring_planet
+
+        create_starbase = {
+            size = orbital_ring_tier_1
+            owner = FROM
+            #module = <starbase_module>
+            #building = <starbase_building>
+            effect = { }
+        }
+
+	}
+
+	ai_weight = {
+		weight = 1
+
+		modifier = {
+            factor = 2
+            num_pops > 25
+        }
+        modifier = {
+            factor = 3
+            num_pops > 50
+        }
+
+		modifier = {
+			factor = 2
+			solar_system = {
+				exists = owner
+				is_same_value = owner.capital_scope.solar_system
+			}
+		}
+		modifier = {
+			factor = 1.5
+			solar_system = {
+                any_neighbor_system = {
+                    exists = owner
+                    is_same_value = owner.capital_scope.solar_system
+                }
+			}
+		}
+	}
+}

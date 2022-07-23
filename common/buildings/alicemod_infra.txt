@@ -543,17 +543,21 @@ building_alicemod_expand_low_orbit_shell = {
         }
         modifier = {
             factor = 1.5
-            any_neighbor_system = {
-                exists = owner
-                is_same_value = owner.capital_scope.solar_system
+            solar_system = {
+                any_neighbor_system = {
+                    exists = owner
+                    is_same_value = owner.capital_scope.solar_system
+                }
             }
         }
 
         modifier = {
             factor = 2.5
-            any_neighbor_system = {
-                exists = owner
-                owner = { NOT = { is_same_value = from } }
+            solar_system = {
+                any_neighbor_system = {
+                    exists = owner
+                    owner = { NOT = { is_same_value = from } }
+                }
             }
         }
     }

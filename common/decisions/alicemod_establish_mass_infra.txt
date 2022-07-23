@@ -1,0 +1,179 @@
+alicemod_decision_establish_mass_infra = {
+	owned_planets_only = yes
+	icon = decision_prospect
+
+	enactment_time = 0
+	resources = {
+		category = decisions
+		cost = {
+			unity = 2000
+			energy = 5000
+			minerals = 5000
+			influence = 250
+			alloys = 5000
+		}
+	}
+
+	potential = {
+		NOR = {
+			is_planet_class = pc_ringworld_habitable_damaged
+			is_planet_class = pc_ringworld_tech_damaged
+			is_planet_class = pc_ringworld_seam_damage
+			is_planet_class = pc_habitat_damage
+		}
+	}
+
+	allow = {
+		if = {
+			limit = {
+				is_variable_set = alicemod_var_add_colony_habs
+			}
+			custom_tooltip = {
+				fail_text = requires_max_3_times_fail_simple
+				success_text = requires_max_3_times_ice_dumping
+				check_variable = {
+					which = alicemod_var_add_colony_habs
+					value < 3
+				}
+			}
+		}
+		else = {
+			custom_tooltip = {
+				text = requires_max_3_times_pass_simple
+				always = yes
+			}
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+            change_variable = {
+                which = alicemod_var_add_colony_habs
+                value = 1
+            }
+        }
+
+		add_building = building_alicemod_urban_shell
+		add_building = building_alicemod_expand_low_orbit_shell
+		add_building = building_alicemod_utopian_homes
+		add_building = building_alicemod_utopian_homes
+
+	}
+
+	ai_weight = {
+		weight = 5
+
+		modifier = {
+            factor = 2
+            num_pops > 25
+        }
+        modifier = {
+            factor = 3
+            num_pops > 50
+        }
+
+		modifier = {
+			factor = 2
+			solar_system = {
+				exists = owner
+				is_same_value = owner.capital_scope.solar_system
+			}
+		}
+		modifier = {
+			factor = 1.5
+			solar_system = {
+                any_neighbor_system = {
+                    exists = owner
+                    is_same_value = owner.capital_scope.solar_system
+                }
+			}
+		}
+	}
+}
+
+
+alicemod_decision_establish_mass_infra_ai_cheap = {
+	owned_planets_only = yes
+	icon = decision_prospect
+
+	enactment_time = 0
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+
+	potential = {
+		owner = { is_ai = yes }
+	}
+
+	allow = {
+		if = {
+			limit = {
+				is_variable_set = alicemod_var_add_colony_habs
+			}
+			custom_tooltip = {
+				fail_text = requires_max_3_times_fail_simple
+				success_text = requires_max_3_times_ice_dumping
+				check_variable = {
+					which = alicemod_var_add_colony_habs
+					value < 4
+				}
+			}
+		}
+		else = {
+			custom_tooltip = {
+				text = requires_max_3_times_pass_simple
+				always = yes
+			}
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+            change_variable = {
+                which = alicemod_var_add_colony_habs
+                value = 1
+            }
+        }
+
+		add_building = building_alicemod_urban_shell
+		add_building = building_alicemod_urban_shell
+		add_building = building_alicemod_expand_low_orbit_shell
+		add_building = building_alicemod_utopian_homes
+		add_building = building_alicemod_utopian_homes
+
+
+	}
+
+	ai_weight = {
+		weight = 1
+
+		modifier = {
+            factor = 3
+            num_pops > 25
+        }
+        modifier = {
+            factor = 30
+            num_pops > 50
+        }
+
+		modifier = {
+			factor = 2
+			solar_system = {
+				exists = owner
+				is_same_value = owner.capital_scope.solar_system
+			}
+		}
+		modifier = {
+			factor = 1.5
+			solar_system = {
+                any_neighbor_system = {
+                    exists = owner
+                    is_same_value = owner.capital_scope.solar_system
+                }
+			}
+		}
+	}
+}
