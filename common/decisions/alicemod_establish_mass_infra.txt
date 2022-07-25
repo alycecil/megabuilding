@@ -151,16 +151,17 @@ alicemod_decision_establish_mass_infra_ai_cheap = {
 		weight = 1
 
 		modifier = {
-            factor = 3
+            factor = 30
             num_pops > 25
         }
+
         modifier = {
-            factor = 30
+            factor = 80
             num_pops > 50
         }
 
 		modifier = {
-			factor = 2
+			factor = 200
 			solar_system = {
 				exists = owner
 				is_same_value = owner.capital_scope.solar_system

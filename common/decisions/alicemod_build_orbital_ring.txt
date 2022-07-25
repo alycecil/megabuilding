@@ -21,6 +21,12 @@ alicemod_decision_build_orbital_ring = {
             has_planet_flag = orbital_ring_planet
             # starbase = { NOT = { has_starbase_size >= orbital_ring_tier_1 } }
 		}
+        solar_system = {
+            check_variable = {
+                which = alicemod_built_thing
+                value < 32
+            }
+        }
 	}
 
 	effect = {
@@ -28,6 +34,12 @@ alicemod_decision_build_orbital_ring = {
             change_variable = {
                 which = alicemod_var_build_orbital_ring
                 value = 1
+            }
+            solar_system = {
+                change_variable = {
+                    which = alicemod_built_thing
+                    value = 1
+                }
             }
         }
 
