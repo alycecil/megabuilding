@@ -16,16 +16,10 @@ alicemod_decision_build_orbital_ring = {
 
 	potential = {
 		NOR = {
-			is_planet_class = pc_ringworld_habitable
-			is_planet_class = pc_ringworld_habitable_damaged
-			is_planet_class = pc_ringworld_tech
-			is_planet_class = pc_ringworld_tech_damaged
-			is_planet_class = pc_ringworld_seam
-			is_planet_class = pc_ringworld_seam_damage
 			is_variable_set = alicemod_var_build_orbital_ring
             has_planet_flag = ruined_orbital_ring_planet
             has_planet_flag = orbital_ring_planet
-            starbase = { NOT = { has_starbase_size >= orbital_ring_tier_1 } }
+            # starbase = { NOT = { has_starbase_size >= orbital_ring_tier_1 } }
 		}
 	}
 
