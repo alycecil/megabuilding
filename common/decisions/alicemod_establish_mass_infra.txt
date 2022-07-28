@@ -101,11 +101,93 @@ alicemod_decision_establish_mass_infra_ai_cheap = {
 		category = decisions
 		cost = {
 			influence = 50
+			minerals = 1000
+			alloys = 1000
+			food = 1000
 		}
 	}
 
 	potential = {
 		owner = { is_ai = yes }
+		NOT = {
+            is_variable_set = alicemod_var_add_colony_habs
+        }
+	}
+
+	allow = {
+        custom_tooltip = {
+            text = requires_max_3_times_pass_simple
+            always = yes
+        }
+	}
+
+	effect = {
+		hidden_effect = {
+            change_variable = {
+                which = alicemod_var_add_colony_habs
+                value = 1
+            }
+        }
+
+		add_building = building_alicemod_urban_shell
+		add_building = building_alicemod_urban_shell
+		add_building = building_alicemod_expand_low_orbit_shell
+		add_building = building_alicemod_utopian_homes
+		add_building = building_alicemod_utopian_homes
+
+
+	}
+
+	ai_weight = {
+		weight = 1
+
+		modifier = {
+            factor = 30
+            num_pops > 75
+        }
+
+        modifier = {
+            factor = 80
+            num_pops > 250
+        }
+
+		modifier = {
+			factor = 200
+			solar_system = {
+				exists = owner
+				is_same_value = owner.capital_scope.solar_system
+			}
+		}
+		modifier = {
+			factor = 1.5
+			solar_system = {
+                any_neighbor_system = {
+                    exists = owner
+                    is_same_value = owner.capital_scope.solar_system
+                }
+			}
+		}
+	}
+}
+
+alicemod_decision_establish_mass_infra_ai_cheap_2 = {
+	owned_planets_only = yes
+	icon = decision_prospect
+
+	enactment_time = 0
+	resources = {
+		category = decisions
+		cost = {
+			influence = 150
+			minerals = 1000
+			alloys = 1000
+			food = 1000
+		}
+	}
+
+	potential = {
+		owner = { is_ai = yes }
+        is_variable_set = alicemod_var_add_colony_habs
 	}
 
 	allow = {
@@ -118,7 +200,7 @@ alicemod_decision_establish_mass_infra_ai_cheap = {
 				success_text = requires_max_3_times_ice_dumping
 				check_variable = {
 					which = alicemod_var_add_colony_habs
-					value < 4
+					value < 2
 				}
 			}
 		}
@@ -152,28 +234,14 @@ alicemod_decision_establish_mass_infra_ai_cheap = {
 
 		modifier = {
             factor = 30
-            num_pops > 25
-        }
-
-        modifier = {
-            factor = 80
-            num_pops > 50
+            num_pops > 75
         }
 
 		modifier = {
-			factor = 200
+			factor = 0
 			solar_system = {
 				exists = owner
-				is_same_value = owner.capital_scope.solar_system
-			}
-		}
-		modifier = {
-			factor = 1.5
-			solar_system = {
-                any_neighbor_system = {
-                    exists = owner
-                    is_same_value = owner.capital_scope.solar_system
-                }
+				NOT = { is_same_value = owner.capital_scope.solar_system }
 			}
 		}
 	}
