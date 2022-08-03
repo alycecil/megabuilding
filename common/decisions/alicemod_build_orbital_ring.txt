@@ -24,7 +24,7 @@ alicemod_decision_build_orbital_ring = {
         solar_system = {
             check_variable = {
                 which = alicemod_built_thing
-                value < 32
+                value < 64
             }
         }
 	}
