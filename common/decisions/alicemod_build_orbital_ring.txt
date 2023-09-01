@@ -56,33 +56,7 @@ alicemod_decision_build_orbital_ring = {
 	}
 
 	ai_weight = {
-		weight = 1
-
-		modifier = {
-            factor = 2
-            num_pops > 25
-        }
-        modifier = {
-            factor = 3
-            num_pops > 50
-        }
-
-		modifier = {
-			factor = 2
-			solar_system = {
-				exists = owner
-				is_same_value = owner.capital_scope.solar_system
-			}
-		}
-		modifier = {
-			factor = 1.5
-			solar_system = {
-                any_neighbor_system = {
-                    exists = owner
-                    is_same_value = owner.capital_scope.solar_system
-                }
-			}
-		}
+		weight = 0
 	}
 }
 
@@ -152,7 +126,7 @@ alicemod_decision_build_orbital_ring_ai = {
             num_pops > 25
         }
         modifier = {
-            factor = 3
+            factor = 10
             num_pops > 50
         }
 
