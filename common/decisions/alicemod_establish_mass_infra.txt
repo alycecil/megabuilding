@@ -100,7 +100,9 @@ alicemod_decision_establish_mass_infra_ai_cheap = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 150
+			minerals = 100
+			alloys = 100
+			food = 100
 		}
 	}
 
@@ -136,7 +138,7 @@ alicemod_decision_establish_mass_infra_ai_cheap = {
 	}
 
 	ai_weight = {
-		weight = 1
+		weight = 100
 
 		modifier = {
             factor = 30
@@ -175,7 +177,6 @@ alicemod_decision_establish_mass_infra_ai_cheap_2 = {
 	resources = {
 		category = decisions
 		cost = {
-			influence = 150
 			minerals = 1000
 			alloys = 1000
 			food = 1000
