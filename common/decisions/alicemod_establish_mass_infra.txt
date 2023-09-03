@@ -99,11 +99,6 @@ alicemod_decision_establish_mass_infra_ai_cheap = {
 	enactment_time = 0
 	resources = {
 		category = decisions
-		cost = {
-			minerals = 100
-			alloys = 100
-			food = 100
-		}
 	}
 
 	potential = {
@@ -138,7 +133,7 @@ alicemod_decision_establish_mass_infra_ai_cheap = {
 	}
 
 	ai_weight = {
-		weight = 100
+		weight = 1000
 
 		modifier = {
             factor = 30

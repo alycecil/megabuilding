@@ -68,12 +68,6 @@ alicemod_decision_build_orbital_ring_ai = {
 	enactment_time = 0
 	resources = {
 		category = decisions
-		cost = {
-			influence = 15
-			minerals = 100
-			alloys = 100
-			food = 100
-		}
 	}
 
 	potential = {
@@ -119,7 +113,7 @@ alicemod_decision_build_orbital_ring_ai = {
 	}
 
 	ai_weight = {
-		weight = 10
+		weight = 1000
 
 		modifier = {
             factor = 2
